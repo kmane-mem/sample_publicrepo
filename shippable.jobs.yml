@@ -46,7 +46,25 @@ jobs:
     steps:
       - IN: sample_img_pub 
     flags: manifest
-    
+  
+  - name: manifest_aws_pub
+    type: manifest
+    allowPublicAccess: true
+    steps:
+      - IN: sample_img_pub 
+      
+  - name: manifest_gke_pub
+    type: manifest
+    allowPublicAccess: true
+    steps:
+      - IN: sample_img_pub       
+      
+  - name: manifest_kube_pub
+    type: manifest
+    allowPublicAccess: true
+    steps:
+      - IN: sample_img_pub 
+
   - name: runsh-job2-pub
     type: runSh
     allowPublicAccess: true
@@ -82,6 +100,30 @@ jobs:
     on_success:
       - NOTIFY: sample-email-pub
       - NOTIFY: sample-slack-pub
+  
+  - name: sample-awsdeploy-pub
+    type: deploy
+    allowPublicAccess: true
+    steps:
+      - IN: sample-awscluster-pub
+      - IN: manifest_aws_pub
+      - IN: sample-dopts-pub
+  
+  - name: sample-kubedeploy-pub
+    type: deploy
+    allowPublicAccess: true
+    steps:
+      - IN: sample-kubecluster-pub
+      - IN: manifest_kube_pub
+      - IN: sample-dopts-pub
+  
+  - name: sample-gkedeploy-pub
+    type: deploy
+    allowPublicAccess: true
+    steps:
+      - IN: sample-gkecluster-pub
+      - IN: manifest_gke_pub
+      - IN: sample-dopts-pub
       
   - name: sample-provision-pub                                                 
     type: provision     
