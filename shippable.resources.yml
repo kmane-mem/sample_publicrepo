@@ -77,7 +77,7 @@ resources:
     type: cluster
     integration: "ship-kube"
   
-  - name: gke_cluster
+  - name: sample-gkecluster-pub
     type: cluster
     integration: ship-gke
     pointer:
