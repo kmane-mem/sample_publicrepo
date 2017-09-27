@@ -1,20 +1,21 @@
 # Language setting
-language: node_js
+language: python
 
 # Version number
-node_js:
-  - 8.1   
+python:
+  - 3.6   
 
 #Uncomment below section to disable the private submodules
 git:
    submodules: false
+   
 env:
   - secure: lXSZhHdFui76pD7LYSfTAjD/6IKkl1wAgobE7TvJ4W3agH7KqNHFqiXK/DLesTvXdOVHJAn0kqiu5QJJ1M5W42nlrNJqoQR3XivCoE/L9pEQMh9BNtAHdcIKRnoxj04AO2hV1bXyv0HUda5aZebpqqK9KHORLaUAkZLdHsKIpPiF5AL02B5hOWhvAGI9gpUguNAIzolX2KkSluAngHJqwk4BLFSDAOj/jeINPijU08uvx9zgB1/kjemDlFJr/h6HCPmX4GdN0QNzDT7/aG4EzVolab0lnpNtrzU7TCJMQXwc0A9xmPNXLEiPXLbyEDVv6/FTR72qYNnSJOjh7JbR/w==
    
 build:
   ci:
     - echo "Hello!!!"
-    - node --version
+    #- node --version
     - lsb_release -a
     - docker --version
     - docker info
