@@ -15,7 +15,7 @@ git:
 build:
   pre_ci_boot:
     image_name: aarch/ubuntu
-    image_tag: xenial
+    image_tag: trusty
     pull: true
     
   ci:
