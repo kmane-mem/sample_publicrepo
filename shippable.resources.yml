@@ -75,7 +75,7 @@ resources:
   
   - name: sample-kubecluster-pub
     type: cluster
-    integration: "ship-kube"
+    integration: "ship-kubernetes"
   
   - name: sample-gkecluster-pub
     type: cluster
