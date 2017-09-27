@@ -1,5 +1,4 @@
 
-FROM arm64v8/ubuntu:16.04
-
+FROM drydockaarch64/u16pyt:master
 RUN apt-get update
 
