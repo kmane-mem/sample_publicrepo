@@ -10,7 +10,7 @@ git:
    
 build:
   pre_ci_boot:
-    image_name: aarch/ubuntu
+    image_name: aarch64/ubuntu
     image_tag: trusty
     pull: true
     
