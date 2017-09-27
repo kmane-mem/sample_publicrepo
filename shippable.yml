@@ -14,8 +14,8 @@ git:
    
 build:
   pre_ci_boot:
-    image_name: arm64v8/ubuntu
-    image_tag: 14.04
+    image_name: aarch/ubuntu
+    image_tag: xenial
     pull: true
     
   ci:
