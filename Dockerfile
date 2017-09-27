@@ -1,3 +1,5 @@
-FROM drydockaarch64/u16pyt:master 
 
-RUN mkdir -p /tmp/logs
+FROM arm64v8/ubuntu:16.04
+
+RUN apt-get update
+
