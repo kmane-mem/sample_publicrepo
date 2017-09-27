@@ -1,25 +1,17 @@
 language: python
-#language: node_js
 
 # Version number
-#node_js:
-  #- 8.1   
-  #- 6.11 
-
 python:
-  - pypy3 
-  
-#Uncomment below section to disable the private submodules
-git:
-   submodules: false
-   
-build:
-  ci:
-    - python --version# Language setting
-    - lsb_release -a
-    - docker --version
-    - docker info
-    - docker ps
-    #- node --version
+  - 2.7
 
+build:
+  pre_ci_boot:
+    image_name: drydockaarch64/u16pyt
+    image_tag: master
+    pull: true
+  ci:
+    - python -V
+    - docker ps
+    - docker build -t=test .
+    - docker images
     
