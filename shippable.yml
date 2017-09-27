@@ -4,6 +4,11 @@ language: python
 python:
   - 2.7
 
+env: 
+  global:
+    - AWS_S3_BUCKET='s3://push-to-s3'
+    - AWS_S3_REGION='us-west-2'
+    
 git:
    submodules: false
    
@@ -17,4 +22,24 @@ build:
     - docker ps
     - docker build -t=test .
     - docker images
-    
+
+integrations:
+  deploy:
+    - integrationName: "ship-aws"
+      type: aws
+      target: eb_paas
+      platform: "Node.js"
+      application_name: "sample-app"
+      env_name: "SampleApp-env"
+      region: "us-west-2"  
+      
+    - integrationName: "ship-aws"
+      type: aws
+      target: eb_docker
+      application_name: "docker-app"
+      env_name: "DockerApp-env"
+      bucket_name: "elasticbeanstalk-us-east-1-742038439709"
+      region: "us-west-2"
+      image_name: "shippabledocker/pipelinev2"
+      image_tag: "$BRANCH.$BUILD_NUMBER"
+      
