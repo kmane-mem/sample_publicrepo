@@ -1,3 +1,3 @@
-FROM drydockaarch64/u16pyt:master #drydock/u16nodall:prod
+FROM drydockaarch64/u16pyt:master 
 
 RUN mkdir -p /tmp/logs
