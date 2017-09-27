@@ -59,7 +59,7 @@ jobs:
     steps:
       - IN: sample_img_pub       
       
-  - name: manifest_kube_pub
+  - name: manifest-kube-pub
     type: manifest
     allowPublicAccess: true
     steps:
@@ -114,7 +114,7 @@ jobs:
     allowPublicAccess: true
     steps:
       - IN: sample-kubecluster-pub
-      - IN: manifest_kube_pub
+      - IN: manifest-kube-pub
       - IN: sample-dopts-pub
   
   - name: sample-gkedeploy-pub
