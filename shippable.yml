@@ -14,9 +14,10 @@ git:
    
 build:
   pre_ci_boot:
-    image_name: drydockaarch64/u16pyt
-    image_tag: master
+    image_name: arm64v8/ubuntu
+    image_tag: 16.04
     pull: true
+    
   ci:
     - python -V
     - docker ps
