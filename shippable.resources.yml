@@ -65,7 +65,25 @@ resources:
     integration: ddc
     pointer:
       sourceName : "nothing"
-
+  
+  - name: sample-awscluster-pub
+    type: cluster
+    integration: ship-aws
+    pointer:
+      sourceName : "testCL"
+      region: "us-west-2"
+  
+  - name: sample-kubecluster-pub
+    type: cluster
+    integration: "ship-kube"
+  
+  - name: gke_cluster
+    type: cluster
+    integration: ship-gke
+    pointer:
+      sourceName: "small-cluster" #name of the cluster we are deploying.
+      region: "us-east1-d"
+      
   - name: sample-slack-pub
     type: notification
     integration: "notify-slack"
