@@ -18,4 +18,4 @@ build:
     - docker ps
     - docker build -t=test .
     - docker images
-    - echo "End of CI"
+    - echo "End of CI!"
