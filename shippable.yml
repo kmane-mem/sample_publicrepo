@@ -2,7 +2,7 @@ language: python
 
 # Version number
 python:
-  - 2.7
+  - 3.6
     
 git:
    submodules: false
@@ -18,4 +18,7 @@ build:
     - docker ps
     - docker build -t=test .
     - docker images
+    - lsb_release -a
+    - docker --version
+    - docker info
     - echo "End of CI!"
